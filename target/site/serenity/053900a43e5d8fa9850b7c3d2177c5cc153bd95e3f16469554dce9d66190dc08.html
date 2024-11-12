@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Rechercher une agence</title>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff"><link rel="stylesheet" href="bootstrap-icons/bootstrap-icons.css">
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.13.1/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.13.1/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.13.1/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/>
+<!--CHART.JS-->
+<script src="chartjs/chart.js"></script>
+<script src="chartjs/chartjs-plugin-datalabels@2.0.0.min.js"></script>
+<script src="chartjs/patternomaly.min.js"></script>
+<script>
+    // Register the plugin to all charts:
+    Chart.register(ChartDataLabels);
+</script>
+<!-- JQuery-UI -->
+<link type="text/css" href="jqueryui/1.11.2-start/jquery-ui.min.css" rel="Stylesheet" />
+<script type="text/javascript" src="jqueryui/1.11.2-start/jquery-ui.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.13.1/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.13.1/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.13.1/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<!-- ImgPreview -->
+<script src="scripts/imgpreview.full.jquery.js" type="text/javascript"></script>
+</head>
+
+<body class="results-page">
+
+
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">Serenity/JS with Playwright Test</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+        <span class="breadcrumbs">
+            <a href="index.html" class="breadcrumbs">Home</a>
+
+ <!-- inflection.of(breadcrumb.displayName).asATitle()-->
+            > <a href="#">Francais</a>
+ <!-- inflection.of(breadcrumb.displayName).asATitle()-->
+            > <a href="2d31bd1f777539c300c7dd336264895132cadae10b77b474f2d787c78a91e732.html">Affichage EA</a>
+        > Rechercher une agence
+        </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="bi bi-journal-check"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="bi bi-journal-text"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="7ea0a5e2d679b9deeda9910ae4a9bcd3a281e0d908303a9e16e486103e98880c.html"><i class="bi bi-chat-text"></i> Capabilities</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="bi bi-chat-text"></i> Features</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 08-11-2024 10:58</span>
+    <br style="clear:left"/>
+</div>
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                                <div>
+                                    <h3 class="discreet-story-header">
+                                        <i class="fs-2 bi bi-chat-left-quote title-icon"></i>
+                                        <span class="story-header-title">Affichage EA </span>
+                                    </h3>
+
+                                </div>
+
+                        </td>
+                        <td valign="top">
+                            <p class="tag">
+                                    <span class="badge example-tag tag-badge" style="background:default;">
+                                    <i class="bi bi-tag-fill"></i>&nbsp;
+                                        <a class="tagLink" style="background:default;"
+                                           href="#">Francais
+                                              (capability)
+                                        </a>
+                                </span>
+                                    <span class="badge example-tag tag-badge" style="background:default;">
+                                    <i class="bi bi-tag-fill"></i>&nbsp;
+                                        <a class="tagLink" style="background:default;"
+                                           href="34658a1663fcf042bd7acb3325affbe4e647c8acd84d0228be2f52e1381e61b9.html">10 To 30 Seconds
+                                              (Duration)
+                                        </a>
+                                </span>
+                                    <span class="badge example-tag tag-badge" style="background:default;">
+                                    <i class="bi bi-tag-fill"></i>&nbsp;
+                                        <a class="tagLink" style="background:default;"
+                                           href="2d31bd1f777539c300c7dd336264895132cadae10b77b474f2d787c78a91e732.html">Affichage EA
+                                              (feature)
+                                        </a>
+                                </span>
+                                    
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='bi bi-exclamation-triangle-fill error-icon fa-2x' title='ERROR'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="error-color">
+                                    Rechercher une agence
+                                        <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+
+            <!-- CAST MEMBERS -->
+            <div>&nbsp;</div>
+            <div>
+                <h3 class="discreet-story-header">
+                    <i class="fs-2 bi bi-people large-icon"></i>
+                    <span class="story-header-title">
+                        <a class="btn btn-primary" data-toggle="collapse" href="#castDetails"
+                           role="button" aria-expanded="true" aria-controls="castDetails">Cast</a>
+                    </span>
+                </h3>
+            </div>
+            <div class="collapse multi-collapse" id="castDetails">
+                <table class="cast">
+                    <tr>
+                            <td width="100%">
+                                <h4>
+                                    <i class="fs-2 bi bi-person"></i>&nbsp;
+                                    <span>
+                                        <a data-toggle="collapse" href="#abilities-Alice"
+                                           aria-expanded="false" aria-controls="abilities">Alice</a>
+                                        
+                                    </span>
+                                </h4>
+                                <div class="collapse multi-collapse" id="abilities-Alice">
+                                        <div>
+                                            <span class="cast-description">Alice can:</span>
+                                            <ul>
+                                                    <li>PerformActivities</li>
+                                                    <li>AnswerQuestions</li>
+                                                    <li>RaiseErrors</li>
+                                                    <li>ScheduleWork { scheduler: { clock: { timeAdjustment: { milliseconds: 0 } }, interactionTimeout: { milliseconds: 5000 } } }</li>
+                                                    <li>BrowseTheWeb (BrowseTheWebWithPlaywright)</li>
+                                            </ul>
+                                        </div>
+                                </div>
+                            </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        </td>
+        </tr>
+        </table>
+    </div>
+    <!-- END CAST MEMBERS -->
+
+
+</div>
+</div>
+
+<div class="clr"></div>
+
+
+<div id="beforetable"></div>
+
+
+<div id="tablecontents">
+    <div>
+        <table class="step-table">
+            <tr class="step-titles">
+                <th width="65">
+                </th>
+                <th class="step-description-column greentext">
+                    Steps
+                </th>
+
+                    <th width="150" class="greentext">Screenshots</th>
+                <th width="130" class="greentext">Outcome</th>
+                <th width="100" class="greentext"><i title="Duration" class="bi bi-stopwatch"></i></th>
+            </tr>
+            <tr class="step-table-separator">
+                <td colspan="5"></td>
+            </tr>
+
+                <tr class="test-SUCCESS">
+
+                    <td width="50" class="step-icon">
+                        <a name="0"></a>
+                            <a href="javaScript:void(0)" onClick="toggleDiv('stepSection0')"
+                               style="display:block">
+                                <i class="bi bi-caret-right-square imgstepSection0 success-icon"
+                                   style="margin-left: 20px; float:left; padding-right:5px"></i>
+                            </a>
+                    </td>
+
+                    <td class="step-description-column">
+                        <div class="step-description">
+                            <a href="javaScript:void(0)" onClick="toggleDiv('stepSection0')"
+                               style="display:block;">
+                                <span class="top-level-step">
+                                                Etant donnée Alice se rend sur le site Thelem
+                                        </span>
+                            </a>
+                            <span class="evidence">
+                                </span>
+                        </div>
+                    </td>
+
+                        <td width="160" class="SUCCESS-text">
+
+                                <a href="053900a43e5d8fa9850b7c3d2177c5cc153bd95e3f16469554dce9d66190dc08_screenshots.html#screenshots?screenshot=1">
+                                    <img src="photo-darwin-firefox-131.0-alice-navigates-to-https-www.thelem-assu-389b013680.png"
+                                         href="photo-darwin-firefox-131.0-alice-navigates-to-https-www.thelem-assu-389b013680.png"
+                                         class="screenshot"
+                                         width="48" height="48"/>
+                                </a>
+                        </td>
+                    <td width="130"><span class="top-level-step">SUCCESS</span></td>
+                    <td width="100"><span class="top-level-step">4s 025ms</span></td>
+                </tr>
+                    <tr>
+                        <td colspan="5">
+                            <table id="stepSection0" class="step-table-nested" style="display:none;">
+                <tr class="test-SUCCESS">
+
+                    <td width="70" class="step-icon">
+                        <a name="0-0"></a>
+                            <span style="margin-left: 40px;"
+                                  class="nested-group-icon"><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                    </td>
+
+                    <td class="step-description-column">
+                        <div class="step-description">
+                                <span class="nested-group-step">
+                                                Alice navigates to "https://www.thelem-assurances.fr/"
+                                        </span>
+                            <span class="evidence">
+                                </span>
+                        </div>
+                    </td>
+
+                        <td width="160" class="SUCCESS-text">
+
+                                <a href="053900a43e5d8fa9850b7c3d2177c5cc153bd95e3f16469554dce9d66190dc08_screenshots.html#screenshots?screenshot=1">
+                                    <img src="photo-darwin-firefox-131.0-alice-navigates-to-https-www.thelem-assu-389b013680.png"
+                                         href="photo-darwin-firefox-131.0-alice-navigates-to-https-www.thelem-assu-389b013680.png"
+                                         class="screenshot"
+                                         width="48" height="48"/>
+                                </a>
+                        </td>
+                    <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                    <td width="100"><span class="nested-group-step">3s 305ms</span></td>
+                </tr>
+                <tr class="test-SUCCESS">
+
+                    <td width="70" class="step-icon">
+                        <a name="0-1"></a>
+                            <span style="margin-left: 40px;"
+                                  class="nested-group-icon"><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                    </td>
+
+                    <td class="step-description-column">
+                        <div class="step-description">
+                                <span class="nested-group-step">
+                                                Alice checks whether page element located by css ('.didomi-continue-without-agreeing') does become visible
+                                        </span>
+                            <span class="evidence">
+                                </span>
+                        </div>
+                    </td>
+
+                        <td width="160" class="SUCCESS-text">
+
+                        </td>
+                    <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                    <td width="100"><span class="nested-group-step">268ms</span></td>
+                </tr>
+
+                            </table>
+                        </td>
+                    </tr>
+                <tr class="test-ERROR">
+
+                    <td width="50" class="step-icon">
+                        <a name="1"></a>
+                            <a href="javaScript:void(0)" onClick="toggleDiv('stepSection1')"
+                               style="display:block">
+                                <i class="bi bi-caret-right-square imgstepSection1 error-icon"
+                                   style="margin-left: 20px; float:left; padding-right:5px"></i>
+                            </a>
+                    </td>
+
+                    <td class="step-description-column">
+                        <div class="step-description">
+                            <a href="javaScript:void(0)" onClick="toggleDiv('stepSection1')"
+                               style="display:block;">
+                                <span class="top-level-step">
+                                                Quand elle cherche une agence à "Bordeaux" dans le "33000"
+                                        </span>
+                            </a>
+                            <span class="evidence">
+                                </span>
+                        </div>
+                    </td>
+
+                        <td width="160" class="ERROR-text">
+                                <a href="053900a43e5d8fa9850b7c3d2177c5cc153bd95e3f16469554dce9d66190dc08_screenshots.html#screenshots?screenshot=2">
+                                    <img src="photo-darwin-firefox-131.0-alice-clicks-on-page-element-located-by-css-68ec2e3678.png"
+                                         href="photo-darwin-firefox-131.0-alice-clicks-on-page-element-located-by-css-68ec2e3678.png"
+                                         class="screenshot"
+                                         width="48" height="48"/>
+                                </a>
+                                <i class="bi bi-arrow-right"></i>
+
+                                <a href="053900a43e5d8fa9850b7c3d2177c5cc153bd95e3f16469554dce9d66190dc08_screenshots.html#screenshots?screenshot=5">
+                                    <img src="photo-darwin-firefox-131.0-alice-clicks-on-page-element-located-by-css-6e68d4ffad.png"
+                                         href="photo-darwin-firefox-131.0-alice-clicks-on-page-element-located-by-css-6e68d4ffad.png"
+                                         class="screenshot"
+                                         width="48" height="48"/>
+                                </a>
+                        </td>
+                    <td width="130"><span class="top-level-step">ERROR</span></td>
+                    <td width="100"><span class="top-level-step">13s 993ms</span></td>
+                </tr>
+                    <tr>
+                        <td colspan="5">
+                            <table id="stepSection1" class="step-table-nested" style="display:none;">
+                <tr class="test-SUCCESS">
+
+                    <td width="70" class="step-icon">
+                        <a name="1-0"></a>
+                            <span style="margin-left: 40px;"
+                                  class="nested-group-icon"><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                    </td>
+
+                    <td class="step-description-column">
+                        <div class="step-description">
+                                <span class="nested-group-step">
+                                                Alice clicks on page element located by css ('.header__location')
+                                        </span>
+                            <span class="evidence">
+                                </span>
+                        </div>
+                    </td>
+
+                        <td width="160" class="SUCCESS-text">
+
+                                <a href="053900a43e5d8fa9850b7c3d2177c5cc153bd95e3f16469554dce9d66190dc08_screenshots.html#screenshots?screenshot=3">
+                                    <img src="photo-darwin-firefox-131.0-alice-clicks-on-page-element-located-by-css-68ec2e3678.png"
+                                         href="photo-darwin-firefox-131.0-alice-clicks-on-page-element-located-by-css-68ec2e3678.png"
+                                         class="screenshot"
+                                         width="48" height="48"/>
+                                </a>
+                        </td>
+                    <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                    <td width="100"><span class="nested-group-step">547ms</span></td>
+                </tr>
+                <tr class="test-SUCCESS">
+
+                    <td width="70" class="step-icon">
+                        <a name="1-1"></a>
+                            <span style="margin-left: 40px;"
+                                  class="nested-group-icon"><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                </span>
+                    </td>
+
+                    <td class="step-description-column">
+                        <div class="step-description">
+                                <span class="nested-group-step">
+                                                Alice enters "33000" into page element located by css ('#city')
+                                        </span>
+                            <span class="evidence">
+                                </span>
+                        </div>
+                    </td>
+
+                        <td width="160" class="SUCCESS-text">
+
+                                <a href="053900a43e5d8fa9850b7c3d2177c5cc153bd95e3f16469554dce9d66190dc08_screenshots.html#screenshots?screenshot=4">
+                                    <img src="photo-darwin-firefox-131.0-alice-enters-33000-into-page-element-loca-8ce21f6162.png"
+                                         href="photo-darwin-firefox-131.0-alice-enters-33000-into-page-element-loca-8ce21f6162.png"
+                                         class="screenshot"
+                                         width="48" height="48"/>
+                                </a>
+                        </td>
+                    <td width="130"><span class="nested-group-step">SUCCESS</span></td>
+                    <td width="100"><span class="nested-group-step">560ms</span></td>
+                </tr>
+                <tr class="test-ERROR">
+
+                    <td width="70" class="step-icon">
+                        <a name="1-2"></a>
+                            <span style="margin-left: 40px;"
+                                  class="nested-group-icon"><a href='##beforetable'><i class='bi bi-exclamation-triangle-fill error-icon ' title='ERROR'></i></a>
+                                </span>
+                    </td>
+
+                    <td class="step-description-column">
+                        <div class="step-description">
+                                <span class="nested-group-step">
+                                                Alice clicks on page element located by css ('.pac-matched')
+                                        </span>
+                            <span class="evidence">
+                                </span>
+                        </div>
+                    </td>
+
+                        <td width="160" class="ERROR-text">
+
+                                <a href="053900a43e5d8fa9850b7c3d2177c5cc153bd95e3f16469554dce9d66190dc08_screenshots.html#screenshots?screenshot=5">
+                                    <img src="photo-darwin-firefox-131.0-alice-clicks-on-page-element-located-by-css-6e68d4ffad.png"
+                                         href="photo-darwin-firefox-131.0-alice-clicks-on-page-element-located-by-css-6e68d4ffad.png"
+                                         class="screenshot"
+                                         width="48" height="48"/>
+                                </a>
+                        </td>
+                    <td width="130"><span class="nested-group-step">ERROR</span></td>
+                    <td width="100"><span class="nested-group-step">10s 521ms</span></td>
+                </tr>
+                    <tr class="test-ERROR">
+                        <td width="40">&nbsp</td>
+                        <td width="%" colspan="4" class="error-message-cell">
+
+
+    <div style="display:block">
+        <div class="table">
+            <div class="row">
+                <div class="col-sm-10" style="padding-left:1.5em; padding-top:0.5em; padding-bottom:0.5em;">
+                    <span class="error-message error-message-title">TimeoutError: locator.click: Timeout 10000ms exceeded.<br>Call log:<br>  - waiting for locator(&#39;:light(.pac-matched)&#39;)<br>  -   locator resolved to &lt;span class=&quot;pac-matched&quot;&gt;33000&lt;/span&gt;<br>  - attempting click action<br>  -   waiting for element to be visible, enabled and stable<br>  -   element is visible, enabled and stable<br>  -   scrolling into view if needed<br>  -   done scrolling<br>  -   &lt;p&gt;&hellip;&lt;/p&gt; from &lt;div id=&quot;didomi-host&quot; data-nosnippet=&quot;true&quot;&gt;&hellip;&lt;/div&gt; subtree intercepts pointer events<br>  - retrying click action, attempt #1<br>  -   waiting for element to be visible, enabled and stable<br>  -   element is visible, enabled and stable<br>  -   scrolling into view if needed<br>  -   done scrolling<br>  -   &lt;p&gt;&hellip;&lt;/p&gt; from &lt;div id=&quot;didomi-host&quot; data-nosnippet=&quot;true&quot;&gt;&hellip;&lt;/div&gt; subtree intercepts pointer events<br>  - retrying click action, attempt #2<br>  -   waiting 20ms<br>  -   waiting for element to be visible, enabled and stable<br>  -   element is visible, enabled and stable<br>  -   scrolling into view if needed<br>  -   done scrolling<br>  -   &lt;p&gt;&hellip;&lt;/p&gt; from &lt;div id=&quot;didomi-host&quot; data-nosnippet=&quot;true&quot;&gt;&hellip;&lt;/div&gt; subtree intercepts pointer events<br>  - retrying click action, attempt #3<br>  -   waiting 100ms<br>  -   waiting for element to be visible, enabled and stable<br>  -   element is visible, enabled and stable<br>  -   scrolling into view if needed<br>  -   done scrolling<br>  -   &lt;div id=&quot;didomi-popup&quot; class=&quot;didomi-popup-backdrop didomi-notice-popup didomi-popup__backdrop&quot;&gt;&hellip;&lt;/div&gt; from &lt;div id=&quot;didomi-host&quot; data-nosnippet=&quot;true&quot;&gt;&hellip;&lt;/div&gt; subtree intercepts pointer events<br>  - retrying click action, attempt #4<br>  -   waiting 100ms<br>  -   waiting for element to be visible, enabled and stable<br>  -   element is visible, enabled and stable<br>  -   scrolling into view if needed<br>  -   done scrolling<br>  -   &lt;div id=&quot;didomi-popup&quot; class=&quot;didomi-popup-backdrop didomi-notice-popup didomi-popup__backdrop&quot;&gt;&hellip;&lt;/div&gt; from &lt;div id=&quot;didomi-host&quot; data-nosnippet=&quot;true&quot;&gt;&hellip;&lt;/div&gt; subtree intercepts pointer events<br>  - retrying click action, attempt #5<br>  -   waiting 500ms<br>  -   waiting for element to be visible, enabled and stable<br>  -   element is visible, enabled and stable<br>  -   scrolling into view if needed<br>  -   done scrolling<br>  -   &lt;p&gt;&hellip;&lt;/p&gt; from &lt;div id=&quot;didomi-host&quot; data-nosnippet=&quot;true&quot;&gt;&hellip;&lt;/div&gt; subtree intercepts pointer events<br>  - retrying click action, attempt #6<br>  -   waiting 500ms<br>  -   waiting for element to be visible, enabled and stable<br>  -   element is visible, enabled and stable<br>  -   scrolling into view if needed<br>  -   done scrolling<br>  -   &lt;p&gt;&hellip;&lt;/p&gt; from &lt;div id=&quot;didomi-host&quot; data-nosnippet=&quot;true&quot;&gt;&hellip;&lt;/div&gt; subtree intercepts pointer events<br>  - retrying click action, attempt #7<br>  -   waiting 500ms<br>  -   waiting for element to be visible, enabled and stable<br>  -   element is visible, enabled and stable<br>  -   scrolling into view if needed<br>  -   done scrolling<br>  -   &lt;div id=&quot;didomi-popup&quot; class=&quot;didomi-popup-backdrop didomi-notice-popup didomi-popup__backdrop&quot;&gt;&hellip;&lt;/div&gt; from &lt;div id=&quot;didomi-host&quot; data-nosnippet=&quot;true&quot;&gt;&hellip;&lt;/div&gt; subtree intercepts pointer events<br>  - retrying click action, attempt #8<br>  -   waiting 500ms<br>  -   waiting for element to be visible, enabled and stable<br>  -   element is visible, enabled and stable<br>  -   scrolling into view if needed<br>  -   done scrolling<br>  -   &lt;div id=&quot;didomi-popup&quot; class=&quot;didomi-popup-backdrop didomi-notice-popup didomi-popup__backdrop&quot;&gt;&hellip;&lt;/div&gt; from &lt;div id=&quot;didomi-host&quot; data-nosnippet=&quot;true&quot;&gt;&hellip;&lt;/div&gt; subtree intercepts pointer events<br>  - retrying click action, attempt #9<br>  -   waiting 500ms<br>  -   waiting for element to be visible, enabled and stable<br>  -   element is visible, enabled and stable<br>  -   scrolling into view if needed<br>  -   done scrolling<br>  -   &lt;p&gt;&hellip;&lt;/p&gt; from &lt;div id=&quot;didomi-host&quot; data-nosnippet=&quot;true&quot;&gt;&hellip;&lt;/div&gt; subtree intercepts pointer events<br>  - retrying click action, attempt #10<br>  -   waiting 500ms<br>  -   waiting for element to be visible, enabled and stable<br>  -   element is visible, enabled and stable<br>  -   scrolling into view if needed<br>  -   done scrolling<br>  -   &lt;p&gt;&hellip;&lt;/p&gt; from &lt;div id=&quot;didomi-host&quot; data-nosnippet=&quot;true&quot;&gt;&hellip;&lt;/div&gt; subtree intercepts pointer events<br>  - retrying click action, attempt #11<br>  -   waiting 500ms<br>  -   waiting for element to be visible, enabled and stable<br>  -   element is visible, enabled and stable<br>  -   scrolling into view if needed<br>  -   done scrolling<br>  -   &lt;div id=&quot;didomi-popup&quot; class=&quot;didomi-popup-backdrop didomi-notice-popup didomi-popup__backdrop&quot;&gt;&hellip;&lt;/div&gt; from &lt;div id=&quot;didomi-host&quot; data-nosnippet=&quot;true&quot;&gt;&hellip;&lt;/div&gt; subtree intercepts pointer events<br>  - retrying click action, attempt #12<br>  -   waiting 500ms<br>  -   waiting for element to be visible, enabled and stable<br>  -   element is visible, enabled and stable<br>  -   scrolling into view if needed<br>  -   done scrolling<br>  -   &lt;div id=&quot;didomi-popup&quot; class=&quot;didomi-popup-backdrop didomi-notice-popup didomi-popup__backdrop&quot;&gt;&hellip;&lt;/div&gt; from &lt;div id=&quot;didomi-host&quot; data-nosnippet=&quot;true&quot;&gt;&hellip;&lt;/div&gt; subtree intercepts pointer events<br>  - retrying click action, attempt #13<br>  -   waiting 500ms<br>  -   waiting for element to be visible, enabled and stable<br>  -   element is visible, enabled and stable<br>  -   scrolling into view if needed<br>  -   done scrolling<br>  -   &lt;p&gt;&hellip;&lt;/p&gt; from &lt;div id=&quot;didomi-host&quot; data-nosnippet=&quot;true&quot;&gt;&hellip;&lt;/div&gt; subtree intercepts pointer events<br>  - retrying click action, attempt #14<br>  -   waiting 500ms<br>  -   waiting for element to be visible, enabled and stable<br>  -   element is visible, enabled and stable<br>  -   scrolling into view if needed<br>  -   done scrolling<br>  -   &lt;p&gt;&hellip;&lt;/p&gt; from &lt;div id=&quot;didomi-host&quot; data-nosnippet=&quot;true&quot;&gt;&hellip;&lt;/div&gt; subtree intercepts pointer events<br>  - retrying click action, attempt #15<br>  -   waiting 500ms<br>  -   waiting for element to be visible, enabled and stable<br>  -   element is visible, enabled and stable<br>  -   scrolling into view if needed<br>  -   done scrolling<br>  -   &lt;div id=&quot;didomi-popup&quot; class=&quot;didomi-popup-backdrop didomi-notice-popup didomi-popup__backdrop&quot;&gt;&hellip;&lt;/div&gt; from &lt;div id=&quot;didomi-host&quot; data-nosnippet=&quot;true&quot;&gt;&hellip;&lt;/div&gt; subtree intercepts pointer events<br>  - retrying click action, attempt #16<br>  -   waiting 500ms<br>  -   waiting for element to be visible, enabled and stable<br>  -   element is visible, enabled and stable<br>  -   scrolling into view if needed<br>  -   done scrolling<br>  -   &lt;div id=&quot;didomi-popup&quot; class=&quot;didomi-popup-backdrop didomi-notice-popup didomi-popup__backdrop&quot;&gt;&hellip;&lt;/div&gt; from &lt;div id=&quot;didomi-host&quot; data-nosnippet=&quot;true&quot;&gt;&hellip;&lt;/div&gt; subtree intercepts pointer events<br>  - retrying click action, attempt #17<br>  -   waiting 500ms<br>  -   waiting for element to be visible, enabled and stable<br>  -   element is visible, enabled and stable<br>  -   scrolling into view if needed<br>  -   done scrolling<br>  -   &lt;p&gt;&hellip;&lt;/p&gt; from &lt;div id=&quot;didomi-host&quot; data-nosnippet=&quot;true&quot;&gt;&hellip;&lt;/div&gt; subtree intercepts pointer events<br>  - retrying click action, attempt #18<br>  -   waiting 500ms<br>  -   waiting for element to be visible, enabled and stable<br>  -   element is visible, enabled and stable<br>  -   scrolling into view if needed<br>  -   done scrolling<br>  -   &lt;p&gt;&hellip;&lt;/p&gt; from &lt;div id=&quot;didomi-host&quot; data-nosnippet=&quot;true&quot;&gt;&hellip;&lt;/div&gt; subtree intercepts pointer events<br>  - retrying click action, attempt #19<br>  -   waiting 500ms<br>  -   waiting for element to be visible, enabled and stable<br>  -   element is visible, enabled and stable<br>  -   scrolling into view if needed<br>  -   done scrolling<br>  -   &lt;div id=&quot;didomi-popup&quot; class=&quot;didomi-popup-backdrop didomi-notice-popup didomi-popup__backdrop&quot;&gt;&hellip;&lt;/div&gt; from &lt;div id=&quot;didomi-host&quot; data-nosnippet=&quot;true&quot;&gt;&hellip;&lt;/div&gt; subtree intercepts pointer events<br>  - retrying click action, attempt #20<br>  -   waiting 500ms<br>  -   waiting for element to be visible, enabled and stable<br>  -   element is visible, enabled and stable<br>  -   scrolling into view if needed<br>  -   done scrolling<br>  -   &lt;div id=&quot;didomi-popup&quot; class=&quot;didomi-popup-backdrop didomi-notice-popup didomi-popup__backdrop&quot;&gt;&hellip;&lt;/div&gt; from &lt;div id=&quot;didomi-host&quot; data-nosnippet=&quot;true&quot;&gt;&hellip;&lt;/div&gt; subtree intercepts pointer events<br>  - retrying click action, attempt #21<br>  -   waiting 500ms<br></span>
+                </div>
+                <div class="col-sm-2">
+                    <a class="btn btn-warning details-button" data-toggle="collapse" href="#stacktraceModal-7"
+                       role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><i class="bi bi-eye"></i> More details</a>
+                </div>
+             </div>
+        </div>
+    <div>
+
+    <!-- Details Section -->
+    <div class="row stacktrace-details">
+      <div class="col">
+        <div class="collapse multi-collapse" id="stacktraceModal-7">
+            <div class="card">
+                <div class="card-header">
+                    <h4>TimeoutError </h4>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <pre>.PlaywrightPageElement.click()(/Users/SeB/Documents/Socle-PW/node_modules/@serenity-js/playwright/src/screenplay/models/PlaywrightPageElement.ts:43)<br />.async Click.performAs()(/Users/SeB/Documents/Socle-PW/node_modules/@serenity-js/web/src/screenplay/interactions/Click.ts:74)<br />.async PerformActivities.perform()(/Users/SeB/Documents/Socle-PW/node_modules/@serenity-js/core/src/screenplay/abilities/PerformActivities.ts:60)<br />.async World.<anonymous>()(/Users/SeB/Documents/Socle-PW/features/step_definitions/affichage_EA.steps.ts:34)<br />.async wrapPromiseWithTimeout()(/Users/SeB/Documents/Socle-PW/node_modules/@cucumber/cucumber/src/time.ts:55)<br />.async Object.run()(/Users/SeB/Documents/Socle-PW/node_modules/@cucumber/cucumber/src/user_code_runner.ts:86)<br />.async Object.run()(/Users/SeB/Documents/Socle-PW/node_modules/@cucumber/cucumber/src/runtime/step_runner.ts:51)<br />.async TestCaseRunner.invokeStep()(/Users/SeB/Documents/Socle-PW/node_modules/@cucumber/cucumber/src/runtime/test_case_runner.ts:140)<br />.async TestCaseRunner.runStep()(/Users/SeB/Documents/Socle-PW/node_modules/@cucumber/cucumber/src/runtime/test_case_runner.ts:340)<br />.(/Users/SeB/Documents/Socle-PW/async /Users/SeB/Documents/Socle-PW/node_modules/@cucumber/cucumber/src/runtime/test_case_runner.ts:246)<br />.async TestCaseRunner.aroundTestStep()(/Users/SeB/Documents/Socle-PW/node_modules/@cucumber/cucumber/src/runtime/test_case_runner.ts:173)<br />.async TestCaseRunner.runAttempt()(/Users/SeB/Documents/Socle-PW/node_modules/@cucumber/cucumber/src/runtime/test_case_runner.ts:224)<br />.async TestCaseRunner.run()(/Users/SeB/Documents/Socle-PW/node_modules/@cucumber/cucumber/src/runtime/test_case_runner.ts:191)<br />.async Worker.runTestCase()(/Users/SeB/Documents/Socle-PW/node_modules/@cucumber/cucumber/src/runtime/worker.ts:60)<br />.async InProcessAdapter.run()(/Users/SeB/Documents/Socle-PW/node_modules/@cucumber/cucumber/src/runtime/serial/adapter.ts:33)<br />.async Coordinator.run()(/Users/SeB/Documents/Socle-PW/node_modules/@cucumber/cucumber/src/runtime/coordinator.ts:32)<br />.async runCucumber()(/Users/SeB/Documents/Socle-PW/node_modules/@cucumber/cucumber/src/api/run_cucumber.ts:158)<br />.async Cli.run()(/Users/SeB/Documents/Socle-PW/node_modules/@cucumber/cucumber/src/cli/index.ts:79)<br />.async Object.run()(/Users/SeB/Documents/Socle-PW/node_modules/@cucumber/cucumber/src/cli/run.ts:32)<br /></pre>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+                        </td>
+                    </tr>
+
+                            </table>
+                        </td>
+                    </tr>
+                <tr class="test-SKIPPED">
+
+                    <td width="50" class="step-icon">
+                        <a name="2"></a>
+                            <span style="margin-left: 20px;"
+                                  class="top-level-icon"><a href='##beforetable'><i class='bi bi-skip-forward skipped-icon ' title='SKIPPED'></i></a>
+                                </span>
+                    </td>
+
+                    <td class="step-description-column">
+                        <div class="step-description">
+                                <span class="top-level-step">
+                                                Et elle renseigne le formulaire de contact
+                                        </span>
+                            <span class="evidence">
+                                </span>
+                        </div>
+                    </td>
+
+                        <td width="160" class="SKIPPED-text">
+
+                        </td>
+                    <td width="130"><span class="top-level-step">SKIPPED</span></td>
+                    <td width="100"><span class="top-level-step">001ms</span></td>
+                </tr>
+            <tr class="test-ERROR">
+                    <td colspan="3"></td>
+                <td width="130"><span class="top-level-step"><em>ERROR</em></span></td>
+                <td width="100"><span class="top-level-step"><em>18.11s</em></span></td>
+            </tr>
+
+        </table>
+    </div>
+</div>
+
+<div id="beforefooter"></div>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <span class="version">Serenity BDD version 4.1.20</span>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function toggleDiv(divId) {
+        $("#" + divId).toggle();
+        var $icon = $(".img" + divId);
+        $icon.toggleClass("bi-caret-right-square");
+        $icon.toggleClass("bi-caret-down-square");
+    }
+</script>
+
+
+<script type="text/javascript">
+    //<![CDATA[
+
+    $(document).ready(function () {
+        $('img.screenshot').imgPreview({
+            imgCSS: {
+                width: '500px'
+            },
+            distanceFromCursor: {top: 10, left: -200}
+        });
+    });
+
+    //]]>
+</script>
+<div id="imgPreviewContainer" style="position: absolute; top: 612px; left: 355px; display: none; " class=""><img
+            src="" style="display: none; "></div>
+<div id="imgPreviewContainer2" style="position: absolute; top: 925px; left: 320px; display: none; " class="">
+    <img style="width: 200px; display: none; " src=""></div>
+<div id="imgPreviewWithStyles" style="position: absolute; top: 1272px; left: 321px; display: none; " class="">
+    <img style="height: 200px; opacity: 1; display: none; " src=""></div>
+<div id="imgPreviewWithStyles2" style="display: none; position: absolute; "><img style="height: 200px; "></div>
+<div id="imgPreviewWithStyles3" style="display: none; position: absolute; "><img style="height: 200px; "></div>
+
+</div>
+</body>
+</html>
