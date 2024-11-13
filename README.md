@@ -45,6 +45,7 @@ npm run dev_firefox     #lancer les tests cucumber en DEV sous Firefox
 Ces commandes sont définies dans le fichier package.json, partie Script.
 
 ### Structure du framework
+```
 ├── /date
 │   ├── /JSON                   # Stockage des fichiers JSON
 │   │   ├── Client.json         # Stockage des informations clients
@@ -73,7 +74,7 @@ Ces commandes sont définies dans le fichier package.json, partie Script.
 ├── playwright.config.ts        # Configuration principale de Playwright
 ├── cucumber.js                 # Configuration Cucumber (si applicable)
 └── package.json                # L'ensemble necessaire à l'installation, et les scripts de lancement des tests
-
+```
 
 ### Corporate networks
 
