@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<rootElement>
+  <username>test_user</username>
+  <password>secure_password</password>
+  <url>https://example.com</url>
+</rootElement>

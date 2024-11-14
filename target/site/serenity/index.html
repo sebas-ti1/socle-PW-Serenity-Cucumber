@@ -224,7 +224,7 @@
             <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="bi bi-chat-text"></i> Features</a>
         </li>
     </ul>
-    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 08-11-2024 11:58:55</span>
+    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 14-11-2024 11:24:49</span>
     <br style="clear:left"/>
 </div>
     <div class="clr"></div>
@@ -321,7 +321,7 @@
                     <td>
                         <i class="bi bi-flag-fill"></i> Tests Started
                     </td>
-                    <td>nov. 08, 2024 10:58:20</td>
+                    <td>nov. 14, 2024 10:24:12</td>
                 </tr>
                 <tr scope="row">
                     <td>
@@ -341,28 +341,28 @@
                     <td>
                         <i class="bi bi-trophy"></i> Fastest Test
                     </td>
-                    <td>5s</td>
+                    <td>4s</td>
                 </tr>
                 <tr scope="row">
                     <td>
                         <i class="bi bi-skip-start"></i> Slowest
                         Test
                     </td>
-                    <td>18s</td>
+                    <td>21s</td>
                 </tr>
                 <tr scope="row">
                     <td>
                         <i class="bi bi-stopwatch"></i> Average
                         Execution Time
                     </td>
-                    <td>11s</td>
+                    <td>12s</td>
                 </tr>
                 <tr scope="row">
                     <td>
                         <i class="bi bi-stopwatch-fill"></i> Total
                         Execution Time
                     </td>
-                    <td>23s</td>
+                    <td>25s</td>
                 </tr>
                 </tbody>
             </table>
@@ -428,24 +428,29 @@ Alice ensures that the number of displayed items does equal 0
                                                                                     <td>Etant donnée Alice se rend sur le site Thelem
 Alice navigates to "https://www.thelem-assurances.fr/"
 Alice checks whether page element located by css ('.didomi-continue-without-agreeing') does become visible
+Alice clicks on page element located by xpath ('//span[contains(text(),"Continuer sans accepter")]')
 Quand elle cherche une agence à "Bordeaux" dans le "33000"
 Alice clicks on page element located by css ('.header__location')
 Alice enters "33000" into page element located by css ('#city')
 Alice clicks on page element located by css ('.pac-matched')
+Alice waits until page element located by xpath ("//span[contains(text(),'Nous avons trouvé') and @class='agences__content__number']") does become visible
+Alice clicks on page element located by xpath ("//*[contains(text(),'BORDEAUX') and @class='agences__list__city']")
 Et elle renseigne le formulaire de contact
+Alice clicks on page element located by xpath ("//a[contains(text(),'Contact')]")
+Alice waits until page element located by xpath ("//h1[contains(text(),'Nous contacter')]") does become visible
 </td>
                                                                                     <td>1</td>
-                                                                                    <td>0%</td>
+                                                                                    <td>100%</td>
                                                                                     <td>
-                                                                                            <a href='##beforetable'><i class='bi bi-exclamation-triangle-fill error-icon ' title='ERROR'></i></a>
+                                                                                            <a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
                                                                                     </td>
                                                                                     <td>
                                                                                         <div class="progress">
                                                                                                 <div class="progress-bar"
                                                                                                      role="progressbar"
-                                                                                                     style="width: 100%; background-color: #fe6c2d"
+                                                                                                     style="width: 100%; background-color: #b0cf73"
                                                                                                      aria-valuenow="1"
-                                                                                                     title="100% error"
+                                                                                                     title="100% success"
                                                                                                      aria-valuemin="0"
                                                                                                      aria-valuemax="100">
                                                                                                 </div>
@@ -457,43 +462,6 @@ Et elle renseigne le formulaire de contact
                                                         </div>
                                                     </div>
 
-                                                    <div class="row">
-                                                        <div class="col-lg-6 col-md-6 col-sm-12">
-                                                            <h3>Test Failure Overview</h3>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-lg-6 col-md-6 col-sm-12">
-                                                            <h4>Most Frequent Failures</h4>
-                                                            <table class="table" style="width:40vw;">
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <td class="error-color top-list-title">
-                                                                            <a href="1dd40c820423dc8746c5e935975a4f3ecc628899e7b6eb09820237bc6ca06cf9.html"><a href='##beforetable'><i class='bi bi-exclamation-triangle-fill error-icon ' title='ERROR'></i></a> Error</a>
-                                                                        </td>
-                                                                        <td><span
-                                                                                    class="badge failure-badge">1</span>
-                                                                        </td>
-                                                                    </tr>
-                                                                </tbody>
-                                                            </table>
-                                                        </div>
-                                                        <div class="col-lg-6 col-md-6 col-sm-12">
-                                                            <h4>Most Unstable Features</h4>
-                                                            <table class="table" style="width:40vw;">
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <td class="failure-color top-list-title">
-                                                                            <a href="#">Affichage EA</a>
-                                                                        </td>
-                                                                        <td>
-                                                                            <span class="badge failure-badge">100%</span>
-                                                                        </td>
-                                                                    </tr>
-                                                                </tbody>
-                                                            </table>
-                                                        </div>
-                                                    </div>
                                             </div>
                                             <div class="container-fluid">
         <div class="row">
@@ -504,7 +472,7 @@ Et elle renseigne le formulaire de contact
                                 <h5 class="card-title">Capability</h5>
                             <div>
                                     <a href="86f00ba73a6f3fd436c0973f8ee298034672d0e86755562afc2bf70dc3d645d4.html">
-                                    <span class="tag-badge badge" style="background-color:#fe6c2d; margin:1em;padding:4px;">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
                                         <i class="bi bi-tag-fill"></i> Francais&nbsp;&nbsp;&nbsp;1
                                     </span>
                                     </a>
@@ -526,7 +494,7 @@ Et elle renseigne le formulaire de contact
                                     </span>
                                     </a>
                                     <a href="2d31bd1f777539c300c7dd336264895132cadae10b77b474f2d787c78a91e732.html">
-                                    <span class="tag-badge badge" style="background-color:#fe6c2d; margin:1em;padding:4px;">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
                                         <i class="bi bi-tag-fill"></i> Francais/Affichage EA&nbsp;&nbsp;&nbsp;1
                                     </span>
                                     </a>
@@ -565,7 +533,7 @@ Et elle renseigne le formulaire de contact
                     <td>
                         <i class="bi bi-trophy"></i> Fastest Test
                     </td>
-                    <td>5s</td>
+                    <td>4s</td>
                 </tr>
                 <tr scope="row">
                     <td>
@@ -576,18 +544,18 @@ Et elle renseigne le formulaire de contact
                         <i class="bi bi-skip-start"></i> Slowest
                         Test
                     </td>
-                    <td>18s</td>
+                    <td>21s</td>
                 </tr>
                 <tr scope="row">
                     <td>
                         <i class="bi bi-flag-fill"></i> Tests Started
                     </td>
-                    <td>nov. 08, 2024 10:58:20</td>
+                    <td>nov. 14, 2024 10:24:12</td>
                     <td>
                         <i class="bi bi-stopwatch"></i> Average
                         Execution Time
                     </td>
-                    <td>11s</td>
+                    <td>12s</td>
                 </tr>
                 <tr scope="row">
                     <td>
@@ -599,7 +567,7 @@ Et elle renseigne le formulaire de contact
                         <i class="bi bi-stopwatch-fill"></i> Total
                         Execution Time
                     </td>
-                    <td>23s</td>
+                    <td>25s</td>
                 </tr>
                 </tbody>
             </table>
@@ -635,13 +603,13 @@ Et elle renseigne le formulaire de contact
                                                                         <td>Quand Alice opens the todo app for the first time
 Alors her todo list should be empty
 </td>
-                                                                        <td data-order="1731063500">10:58:20</td>
-                                                                        <td>5s 524ms</td>
+                                                                        <td data-order="1731579852">10:24:12</td>
+                                                                        <td>4s 059ms</td>
                                                                         <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
                                                                                     style="display:none">SUCCESS</span>
                                                                         </td>
                                                                     </tr>
-                                                                    <tr class="scenario-result ERROR">
+                                                                    <tr class="scenario-result SUCCESS">
                                                                         <td>
                                                                                 <a href="#">Affichage EA</a>
                                                                         </td>
@@ -655,10 +623,10 @@ Alors her todo list should be empty
 Quand elle cherche une agence à "Bordeaux" dans le "33000"
 Et elle renseigne le formulaire de contact
 </td>
-                                                                        <td data-order="1731063506">10:58:26</td>
-                                                                        <td>18s 105ms</td>
-                                                                        <td><a href='##beforetable'><i class='bi bi-exclamation-triangle-fill error-icon ' title='ERROR'></i></a> <span
-                                                                                    style="display:none">ERROR</span>
+                                                                        <td data-order="1731579857">10:24:17</td>
+                                                                        <td>21s 161ms</td>
+                                                                        <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                                                    style="display:none">SUCCESS</span>
                                                                         </td>
                                                                     </tr>
                                                                 </tbody>
@@ -685,7 +653,7 @@ Et elle renseigne le formulaire de contact
                                 <h5 class="card-title">Capability</h5>
                             <div>
                                     <a href="86f00ba73a6f3fd436c0973f8ee298034672d0e86755562afc2bf70dc3d645d4.html">
-                                    <span class="tag-badge badge" style="background-color:#fe6c2d; margin:1em;padding:4px;">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
                                         <i class="bi bi-tag-fill"></i> Francais&nbsp;&nbsp;&nbsp;1
                                     </span>
                                     </a>
@@ -707,7 +675,7 @@ Et elle renseigne le formulaire de contact
                                     </span>
                                     </a>
                                     <a href="2d31bd1f777539c300c7dd336264895132cadae10b77b474f2d787c78a91e732.html">
-                                    <span class="tag-badge badge" style="background-color:#fe6c2d; margin:1em;padding:4px;">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
                                         <i class="bi bi-tag-fill"></i> Francais/Affichage EA&nbsp;&nbsp;&nbsp;1
                                     </span>
                                     </a>
@@ -762,7 +730,7 @@ Et elle renseigne le formulaire de contact
             datasets: [{
                 label: 'Test Results',
                 fill: false,
-                data: [1,0,0,0,0,0,1,0],
+                data: [2,0,0,0,0,0,0,0],
                 backgroundColor: ['rgba(153,204,51,0.5)','rgba(165, 199, 238, 0.5)','rgba(168, 168, 168, 0.5)','rgba(238, 224, 152, 0.75)','rgba(255, 153, 102, 0.5)','rgba(255, 22, 49, 0.5)','rgba(255, 97, 8, 0.5)','rgba(255, 104, 255, 0.5)','rgba(83, 50, 168, 0.5)'],
                 borderColor: ['rgba(153,204,51,1)','rgba(165, 199, 238, 1)','rgba(168, 168, 168, 1)','rgba(238, 224, 152, 1)','rgba(255, 153, 102, 1)','rgba(255, 22, 49, 1)','rgba(255, 97, 8, 1)','rgba(255, 104, 255, 1)','rgba(83, 50, 168, 1)'],
                 borderWidth: 1,
@@ -813,7 +781,7 @@ Et elle renseigne le formulaire de contact
                         ctx.font = fontSize + "em sans-serif";
                         ctx.textBaseline = "middle";
 
-                        var text = "50%"
+                        var text = "100%"
                         textX = 10 + Math.round((width - ctx.measureText(text).width) / 2);
                         textY = (height / 2) - 40;
 
@@ -858,7 +826,7 @@ Et elle renseigne le formulaire de contact
             datasets: [
                 {
                     label: 'Automated',
-                    data: [1,0,0,0,0,0,1,0],
+                    data: [2,0,0,0,0,0,0,0],
                     backgroundColor: ['rgba(153,204,51,0.5)','rgba(165, 199, 238, 0.5)','rgba(168, 168, 168, 0.5)','rgba(238, 224, 152, 0.75)','rgba(255, 153, 102, 0.5)','rgba(255, 22, 49, 0.5)','rgba(255, 97, 8, 0.5)','rgba(255, 104, 255, 0.5)','rgba(83, 50, 168, 0.5)'],
                     borderColor: ['rgba(153,204,51,1)','rgba(165, 199, 238, 1)','rgba(168, 168, 168, 1)','rgba(238, 224, 152, 1)','rgba(255, 153, 102, 1)','rgba(255, 22, 49, 1)','rgba(255, 97, 8, 1)','rgba(255, 104, 255, 1)','rgba(83, 50, 168, 1)'],
                     borderWidth: 1
@@ -1010,7 +978,7 @@ Et elle renseigne le formulaire de contact
             },
             {
                 title: 'Affichage EA',
-                result: 'ERROR',
+                result: 'SUCCESS',
                 link: "2d31bd1f777539c300c7dd336264895132cadae10b77b474f2d787c78a91e732.html"
             },
         ]
@@ -1022,7 +990,7 @@ Et elle renseigne le formulaire de contact
             datasets: [
                 {
                     label: ['Passing Tests'],
-                    data: [1,0],
+                    data: [1,1],
                     backgroundColor: [ 'rgba(153,204,51,0.5)' ]
                 },
                 {
@@ -1052,7 +1020,7 @@ Et elle renseigne le formulaire de contact
                 },
                 {
                     label: ['Errors'],
-                    data: [0,1],
+                    data: [0,0],
                     backgroundColor: [ 'rgba(255, 97, 8, 0.5)' ]
                 },
                 {

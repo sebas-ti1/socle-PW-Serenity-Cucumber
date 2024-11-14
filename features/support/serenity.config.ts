@@ -62,9 +62,9 @@ let context: playwright.BrowserContext;
 // Fonction de conversion JSON → XML
 async function convertAndSaveJsonToXml() {
     try {
-        const xmlData = await convertJsonToXml(path.resolve(__dirname, './data/JSON/DATA_Client_BRU.json'), 'rootElement');
-        await saveXmlToFile(path.resolve(__dirname, './data/JSON/output.xml'), xmlData);
-        console.log('Conversion JSON en XML réussie et fichier sauvegardé sous output.xml');
+        const xmlData = await convertJsonToXml('Client_BRU', 'rootElement');
+        await saveXmlToFile('Client_BRU', xmlData);
+        console.log('Conversion JSON en XML réussie et fichier sauvegardé sous DATA_Client.xml');
     } catch (error) {
         console.error('Erreur lors de la conversion ou de la sauvegarde:', error);
     }
@@ -98,12 +98,6 @@ BeforeAll(async () => {
     });
 });
 
-// // Exemple de fonction pour ouvrir une page dans le contexte configuré
-// async function openPageWithContext(url: string) {
-//     const page = await context.newPage();
-//     await page.goto(url);
-//     return page;
-// }
 
 // Après tous les tests, fermer le navigateur et effectuer la conversion JSON → XML
 AfterAll(async () => {
