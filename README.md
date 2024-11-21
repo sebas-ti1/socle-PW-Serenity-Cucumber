@@ -15,7 +15,7 @@ Vous pouvez le tester à cette adresse sans l'installer sur votre ordinateur :
 
 ### Installation
 
-Avant de lancer le projet, vous devez avoir sur votre orindateur : 
+Avant de lancer le projet, vous devez avoir sur votre ordinateur : 
 - Node.js, sur la version 16 ou plus - [download](https://nodejs.org/en/)
 - Java Runtime Environment (JRE) ou a Java Development Kit (JDK) version 11 ou plus - [download](https://adoptopenjdk.net/)
 
@@ -83,11 +83,13 @@ Ces commandes sont définies dans le fichier package.json, partie Script.
 └── package.json                # L'ensemble necessaire à l'installation, et les scripts de lancement des tests
 ```
 
+
+
 ### Réseaux d'entreprise
 
 Si vos administrateurs réseau exigent l'utilisation de serveurs proxy ou d'un registre d'artefacts interne (comme Artifactory, Nexus, etc.), votre environnement de développement pourrait nécessiter une configuration supplémentaire.
 
-La méthode la plus simple consiste à créer un fichier [fichier `.npmrc`](https://docs.npmjs.com/cli/v6/configuring-npm/npmrc) dans votre répertoire personnel :
+La méthode la plus simple consiste à créer un fichier [`.npmrc`](https://docs.npmjs.com/cli/v6/configuring-npm/npmrc) dans votre répertoire personnel :
 
 ```
 proxy=http://user:password@host.mycompany.com:8080/
