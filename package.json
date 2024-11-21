@@ -17,7 +17,7 @@
     "test:qa": "cross-env ENVIRONMENT=QA npx cucumber-js",
     "test:dev": "cross-env ENVIRONMENT=DEV npx cucumber-js",
     "test:dev_iphone": "ENV=DEV DEVICE='iPhone 12' npx cucumber-js",
-    "test:dev_firefox": "ENV=DEV BROWSER='firefox' npx cucumber-js",
+    "test:dev_firefox": "ENV=DEV BROWSER='firefox' npx cucumber-js --parallel 2",
     "start": "mkdirp target/site/serenity && npx http-server -p 8080 target/site/serenity -s -o",
     "lint": "eslint --ext ts --config .eslintrc.js .",
     "lint:fix": "npm run lint -- --fix"
