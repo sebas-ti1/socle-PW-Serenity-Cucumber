@@ -2,8 +2,6 @@
 import * as fs from 'fs';
 import path from 'path';
 import { create } from 'xmlbuilder2';
-import { js2xml } from 'xml-js';  // Assurez-vous d'avoir installé xml-js avec npm install xml-js
-
 
 
 // Fonction pour lire les données JSON

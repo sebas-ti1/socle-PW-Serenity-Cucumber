@@ -46,7 +46,7 @@ Ces commandes sont définies dans le fichier package.json, partie Script.
 
 ### Structure du framework
 ```
-├── /date
+├── /data
 │   ├── /JSON                   # Stockage des fichiers JSON
 │   │   ├── Client.json         # Stockage des informations clients
 │   │   └── ...                 # Autres fichiers clients
@@ -63,24 +63,31 @@ Ces commandes sont définies dans le fichier package.json, partie Script.
 │   ├── /support                # Support pour Cucumber (setup, utilities)
 │   │   ├── serenity.config.ts  # Configuration de l'environnement de test Playwright
 │   │   └── ...                 # Autres fichiers de support si nécessaire
-│   └── client.feature          # Fichiers .feature (scénarios de test en cucumber)
+│   │ 
+│   └── /scenarios              # Dossier contenant tous les scénarios
+│   │   ├── client.feature      # Fichiers .feature (scénarios de test en cucumber)
+│   └── └── ...                 # Autres scénarios
 │
-├── /pageObjects                # Dossier définir les fonctions
+├── /pageObjects                # Dossier pour définir les fonctions
 │   ├── DashboardPage.ts        # Fonction utilisé sur une page précise 
-│   └── └── ...                 # Autres fonctions liées à d'autres pages
+│   └── ...                     # Autres fonctions liées à d'autres pages
+│
+├── /spec                       # Dossier pour définir les tests sans cucumber
+│   ├── test.spec.ts            # Fichier contenant des scénarios de tests sans cucuber
+│   └── ...                     # Autres scénarios de tests
 │
 ├── /target                     # Dossier pour les rapports générés
 │
 ├── playwright.config.ts        # Configuration principale de Playwright
-├── cucumber.js                 # Configuration Cucumber (si applicable)
+├── cucumber.js                 # Configuration Cucumber
 └── package.json                # L'ensemble necessaire à l'installation, et les scripts de lancement des tests
 ```
 
-### Corporate networks
+### Réseaux d'entreprise
 
-If your network administrators require you to use proxy servers or an internal artifact registry (Artifactory, Nexus, etc.), your development environment might require some additional configuration.
+Si vos administrateurs réseau exigent l'utilisation de serveurs proxy ou d'un registre d'artefacts interne (comme Artifactory, Nexus, etc.), votre environnement de développement pourrait nécessiter une configuration supplémentaire.
 
-The easiest way to do it is to create an [`.npmrc` file](https://docs.npmjs.com/cli/v6/configuring-npm/npmrc) in your home directory: 
+La méthode la plus simple consiste à créer un fichier [fichier `.npmrc`](https://docs.npmjs.com/cli/v6/configuring-npm/npmrc) dans votre répertoire personnel :
 
 ```
 proxy=http://user:password@host.mycompany.com:8080/
@@ -89,4 +96,4 @@ strict-ssl=false
 registry=https://artifactory.mycompany.com/artifactory/
 ```
 
-If you encounter issues downloading the Serenity BDD CLI jar, please follow the [detailed instructions in the Serenity/JS Handbook](https://serenity-js.org/api/serenity-bdd/#downloading-the-serenity-bdd-reporting-cli).
+Si vous rencontrez des problèmes pour télécharger le fichier JAR de la Serenity BDD CLI, veuillez suivre les[instructions détaillées dans le manuel Serenity/JS](https://serenity-js.org/api/serenity-bdd/#downloading-the-serenity-bdd-reporting-cli).
