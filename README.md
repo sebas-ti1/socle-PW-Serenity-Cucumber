@@ -32,9 +32,11 @@ Une liste de commande pour exécuter les tests :
 
 ```
 npm run clean           # supprimer les rapports
+
 npm test                # executer l'ensemble des tests SANS cucumber
                         # un rapport est généré dans ce dossier ./target/site/serenity
                         # il est visible en ouvrant index.html
+
 npm start               # pour lancer un mini serveur HTTP et visualiser le rappotr playwright
                         # à http://localhost:8080
 
@@ -50,6 +52,7 @@ Ces commandes sont définies dans le fichier package.json, partie Script.
 │   ├── /JSON                   # Stockage des fichiers JSON
 │   │   ├── Client.json         # Stockage des informations clients
 │   │   └── ...                 # Autres fichiers clients
+│   │ 
 │   └── /XML                    # Stockage des fichiers XML
 │       ├── Client.xml          # Converstion des fichiers json
 │       └── ...                 # Autres fichiers xml
