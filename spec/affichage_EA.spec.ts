@@ -7,6 +7,7 @@ import { Wait,Check } from '@serenity-js/core'
 import { AgencePage } from '../pageObjects/AgencePage';
 import { NousContacterPage } from '../pageObjects/NousContacterPage';
 import { getValueFromJson } from '../utils/json-util';
+import {BaseTest} from '../pageObjects/BaseTest/BaseTest'
 
 
 describe('Affichage EA', () => {
@@ -29,7 +30,7 @@ describe('Affichage EA', () => {
                   Click.on(DashboardPage.AcceptNecessaryCookies),
                 ),
                 Click.on(DashboardPage.trouverUneAgence()),
-                Enter.theValue("33000").into(DashboardPage.inputChercherAgence),
+                ...BaseTest.renseignerUnInput(DashboardPage.inputChercherAgence,"33000"),
                 Click.on(DashboardPage.resultatRechercher),
                 Wait.until(DashboardPage.resultatNombre, isVisible()),
                 //Wait.until(DashboardPage.resultatListe, isVisible()),

@@ -32,15 +32,15 @@ Une liste de commande pour exécuter les tests :
 
 ```
 npm run clean           # supprimer les rapports
-npm test                # executer l'ensemble des tests
+npm test                # executer l'ensemble des tests SANS cucumber
                         # un rapport est généré dans ce dossier ./target/site/serenity
                         # il est visible en ouvrant index.html
 npm start               # pour lancer un mini serveur HTTP et visualiser le rappotr playwright
                         # à http://localhost:8080
 
 npm run cucumber        #Lancer tous les rapports sous cucumber
-npm run dev_iphone      #Lancer les tests cucumber en DEV sous iPhone
-npm run dev_firefox     #lancer les tests cucumber en DEV sous Firefox
+npm run dev_iphone      #Lancer les tests AVEC cucumber en DEV sous iPhone
+npm run dev_firefox     #lancer les tests AVEC cucumber en DEV sous Firefox
 ```
 Ces commandes sont définies dans le fichier package.json, partie Script.
 
@@ -50,9 +50,9 @@ Ces commandes sont définies dans le fichier package.json, partie Script.
 │   ├── /JSON                   # Stockage des fichiers JSON
 │   │   ├── Client.json         # Stockage des informations clients
 │   │   └── ...                 # Autres fichiers clients
-│   ├── /XML                    # Stockage des fichiers XML
-│   │   ├── Client.xml          # Converstion des fichiers json
-│   └── └── ...                 # Autres fichiers xml
+│   └── /XML                    # Stockage des fichiers XML
+│       ├── Client.xml          # Converstion des fichiers json
+│       └── ...                 # Autres fichiers xml
 │
 ├── /features
 │   ├── /step_definitions       # Définitions des étapes de Cucumber
@@ -65,19 +65,23 @@ Ces commandes sont définies dans le fichier package.json, partie Script.
 │   │   └── ...                 # Autres fichiers de support si nécessaire
 │   │ 
 │   └── /scenarios              # Dossier contenant tous les scénarios
-│   │   ├── client.feature      # Fichiers .feature (scénarios de test en cucumber)
-│   └── └── ...                 # Autres scénarios
+│       ├── client.feature      # Fichiers .feature (scénarios de test en cucumber)
+│       └── ...                 # Autres scénarios
 │
 ├── /pageObjects                # Dossier pour définir les fonctions
-│   ├── DashboardPage.ts        # Fonction utilisé sur une page précise 
-│   └── ...                     # Autres fonctions liées à d'autres pages
+│   ├── DashboardPage.ts        # Fonction utilisée sur une page précise 
+│   ├── ...                     # Autres fonctions liées à d'autres pages
+│   │
+│   └── /BaseTest               
+│       └── BaseTest.ts         # Fichier pour regrouper les fonctions de bases
 │
 ├── /spec                       # Dossier pour définir les tests sans cucumber
 │   ├── test.spec.ts            # Fichier contenant des scénarios de tests sans cucuber
 │   └── ...                     # Autres scénarios de tests
 │
-├── /target                     # Dossier pour les rapports générés
+├── /target                     # Dossier contenant les rapports générés
 │
+├── config.ts                   # Configuration PARTAGEE afin de pouvoir lancer playwright seul et cucumber dans un seul framework
 ├── playwright.config.ts        # Configuration principale de Playwright
 ├── cucumber.js                 # Configuration Cucumber
 └── package.json                # L'ensemble necessaire à l'installation, et les scripts de lancement des tests
