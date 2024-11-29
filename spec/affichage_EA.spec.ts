@@ -30,7 +30,7 @@ describe('Affichage EA', () => {
                   Click.on(DashboardPage.AcceptNecessaryCookies),
                 ),
                 Click.on(DashboardPage.trouverUneAgence()),
-                ...BaseTest.renseignerUnInput(DashboardPage.inputChercherAgence,"33000"),
+                ...BaseTest.renseignerUnInput("Votre code postal ou département","33000"),
                 Click.on(DashboardPage.resultatRechercher),
                 Wait.until(DashboardPage.resultatNombre, isVisible()),
                 //Wait.until(DashboardPage.resultatListe, isVisible()),

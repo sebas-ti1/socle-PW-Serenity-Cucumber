@@ -81,7 +81,7 @@ Ces commandes sont définies dans le fichier package.json, partie Script.
 │       └── XpathLibrary.ts     # Listes des Xpaths
 │
 ├── /spec                       # Dossier pour définir les tests sans cucumber
-│   ├── test.spec.ts            # Fichier contenant des scénarios de tests sans cucuber
+│   ├── test.spec.ts            # Fichier contenant des scénarios de tests sans cucumber
 │   └── ...                     # Autres scénarios de tests
 │
 ├── /target                     # Dossier contenant les rapports générés
