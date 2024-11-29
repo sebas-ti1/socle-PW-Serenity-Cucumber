@@ -56,6 +56,7 @@ export default defineConfig<SerenityOptions>({
 
         /* Set headless: false to see the browser window */
         headless: sharedConfig.environment !== 'DEV',
+        slowMo:sharedConfig.slowMo,
         ...sharedConfig.deviceOptions,
 
         defaultActorName: 'Alice',

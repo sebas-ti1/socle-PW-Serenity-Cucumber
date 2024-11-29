@@ -76,7 +76,9 @@ Ces commandes sont définies dans le fichier package.json, partie Script.
 │   ├── ...                     # Autres fonctions liées à d'autres pages
 │   │
 │   └── /BaseTest               
-│       └── BaseTest.ts         # Fichier pour regrouper les fonctions de bases
+│       ├── BaseTest.ts         # Regrouper les fonctions de bases
+│       ├── XpathBuilder.ts     # Générer les Xpaths
+│       └── XpathLibrary.ts     # Listes des Xpaths
 │
 ├── /spec                       # Dossier pour définir les tests sans cucumber
 │   ├── test.spec.ts            # Fichier contenant des scénarios de tests sans cucuber

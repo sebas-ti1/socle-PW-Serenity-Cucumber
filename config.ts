@@ -4,6 +4,7 @@ import { devices } from '@playwright/test';
 const environment = process.env.ENV || 'DEV';
 const browserType = process.env.BROWSER || 'chromium';
 const deviceType = process.env.DEVICE || 'desktop';
+const slowMo = process.env.SLOWMO ? parseInt(process.env.SLOWMO, 10) : 0;
 
 const environments = {
   DEV: {
@@ -48,5 +49,6 @@ const browserOptions = {
     browserType,
     deviceType,
     deviceOptions,
+    slowMo,
     browserOptions: browserOptions[browserType], // Obtenez les options du navigateur spécifié
   };

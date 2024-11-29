@@ -14,6 +14,7 @@ BeforeAll(async () => {
     //browserInstance = await (playwright as any)[browser].launch(launchOptions);
     browserInstance = await playwright[sharedConfig.browserType].launch({
         headless: sharedConfig.environment !== 'DEV',
+        slowMo: sharedConfig.slowMo,
       });
     // const contextOptions = {
     //     baseURL: sharedConfig.baseURL,
